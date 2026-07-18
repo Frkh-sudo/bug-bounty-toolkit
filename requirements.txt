@@ -1,0 +1,35 @@
+# BugKit v4 — Python dependencies
+# Install:  pip install -r requirements.txt
+# Python 3.9+ required
+
+# ── Core HTTP & parsing ────────────────────────────────────────────────
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+certifi>=2024.2.2
+
+# ── CLI & terminal output ──────────────────────────────────────────────
+typer[all]>=0.9.0
+rich>=13.7.0
+
+# ── Database ───────────────────────────────────────────────────────────
+sqlalchemy>=2.0.0
+
+# ── Diff engine ────────────────────────────────────────────────────────
+deepdiff>=6.7.0
+
+# ── Cryptography (identity encryption at rest) ────────────────────────
+cryptography>=42.0.0
+
+# ── Templating (HTML + Markdown reports) ──────────────────────────────
+jinja2>=3.1.4
+
+# ── DNS / subdomain enum ───────────────────────────────────────────────
+dnspython>=2.6.0
+tldextract>=5.1.2
+
+# ── Screenshots (optional) ────────────────────────────────────────────
+# playwright>=1.43.0
+# After pip install: playwright install chromium
+
+# ── Dev / test ─────────────────────────────────────────────────────────
+pytest>=8.0.0
